@@ -6,13 +6,13 @@
 <main id="main">
   <!-- Carousel -->
   <section id="carousel">
-    <app-carousel></app-carousel>
+    <app-carousel (elementCreated)="onElementCreated($event)"></app-carousel>
   </section>
   <!-- End Carousel -->
 
   <!-- Features -->
   <section id="features" class="my-5">
-    <app-features></app-features>
+    <app-features [dataFeatures]="data.features" (elementCreated)="onElementCreated($event)"></app-features>
   </section>
   <!-- End Features -->
 
@@ -27,7 +27,7 @@
 
   <!-- Address -->
   <section id="address" class="my-5">
-    <app-address></app-address>
+    <app-address [addressData]="data.address" (elementCreated)="onElementCreated($event)"></app-address>
   </section>
   <!-- End Address -->
 
@@ -46,5 +46,5 @@
 <!-- End Main -->
 
 <!-- Footer -->
-<app-footer></app-footer>
+<app-footer (elementCreated)="onElementCreated($event)"></app-footer>
 <!-- End Footer -->
