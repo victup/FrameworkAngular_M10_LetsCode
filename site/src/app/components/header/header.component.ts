@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { SearchValue } from 'src/app/models/search-data.model';
 
 @Component({
   selector: 'app-header',
@@ -7,13 +8,20 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
+  @Output() public searchSite: EventEmitter<SearchValue> = new EventEmitter<SearchValue>();
 
+  public resultSearch: SearchValue = {
+    input: ''
+  };
+
+
+  public searchInput(): void{
+    this.searchSite.emit(this.resultSearch);
+  }
 
   constructor() { }
 
   ngOnInit() {
-    this.elementCreated.emit('Header');
   }
 
 }
