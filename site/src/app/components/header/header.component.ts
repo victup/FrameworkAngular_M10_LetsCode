@@ -8,11 +8,9 @@ import { SearchValue } from 'src/app/models/search-data.model';
 })
 export class HeaderComponent implements OnInit {
 
-  @Output() public searchSite: EventEmitter<SearchValue> = new EventEmitter<SearchValue>();
+  @Output() public searchSite: EventEmitter<string> = new EventEmitter<string>();
 
-  public resultSearch: SearchValue = {
-    input: ''
-  };
+  public resultSearch: string = '';
 
 
   public searchInput(): void{

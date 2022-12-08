@@ -60,7 +60,7 @@ export class AppComponent {
     console.log("Formulário enviado com sucesso!", formData);
   }
 
-  onSearch(value: SearchValue): void{
+  onSearch(value: string): void{
     console.log("Pesquisado: ", value);
   }
 
