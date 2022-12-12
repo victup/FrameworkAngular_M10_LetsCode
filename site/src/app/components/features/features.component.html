@@ -1,33 +1,14 @@
 <div class="container">
-  <h1 class="text-center mb-4">Destaques</h1>
+  <h1 class="text-center mb-4">{{ featuresData.sectionTitle }}</h1>
   <div class="row">
-    <div class="col features text-center">
-      <img src="./assets/images/feature1.png" alt="" />
-      <div class="text-center">
-        <h4 [innerHTML]="dataFeatures.feature1.title"></h4>
-        <p [innerHTML]="dataFeatures.feature1.text"></p>
+    <ng-container *ngFor="let feature of featuresData.features">
+      <div class="col features text-center" *ngIf="feature.isActive">
+        <img src="./assets/images/{{ feature.image }}" alt="" />
+        <div class="text-center">
+          <h4>{{ feature.title }}</h4>
+          <p>{{ feature.text }}</p>
+        </div>
       </div>
-    </div>
-    <div class="col features text-center">
-      <img src="./assets/images/feature2.png" alt="" />
-      <div class="text-center">
-        <h4 [innerHTML]="dataFeatures.feature2.title"></h4>
-        <p [innerHTML]="dataFeatures.feature2.text"></p>
-      </div>
-    </div>
-    <div class="col features text-center">
-      <img src="./assets/images/feature3.png" alt="" />
-      <div class="text-center">
-        <h4 [innerHTML]="dataFeatures.feature3.title"></h4>
-        <p [innerHTML]="dataFeatures.feature3.text"></p>
-      </div>
-    </div>
-    <div class="col features text-center">
-      <img src="./assets/images/feature4.png" alt="" />
-      <div class="text-center">
-        <h4 [innerHTML]="dataFeatures.feature3.title"></h4>
-        <p [innerHTML]="dataFeatures.feature3.text"></p>
-      </div>
-    </div>
+    </ng-container>
   </div>
 </div>

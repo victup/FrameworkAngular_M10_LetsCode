@@ -1,18 +1,18 @@
 <!-- Navbar -->
-<app-header (searchSite)="onSearch($event)"></app-header>
+<app-header [headerData]="data.header" (searchEmitter)="onSearchSubmitted($event)"></app-header>
 <!-- End Navbar -->
 
 <!-- Main -->
 <main id="main">
   <!-- Carousel -->
   <section id="carousel">
-    <app-carousel (elementCreated)="onElementCreated($event)"></app-carousel>
+    <app-carousel></app-carousel>
   </section>
   <!-- End Carousel -->
 
   <!-- Features -->
   <section id="features" class="my-5">
-    <app-features [dataFeatures]="data.features" (elementCreated)="onElementCreated($event)"></app-features>
+    <app-features [featuresData]="data.features"></app-features>
   </section>
   <!-- End Features -->
 
@@ -27,7 +27,7 @@
 
   <!-- Address -->
   <section id="address" class="my-5">
-    <app-address [addressData]="data.address" (elementCreated)="onElementCreated($event)"></app-address>
+    <app-address [addressData]="data.address"></app-address>
   </section>
   <!-- End Address -->
 
@@ -46,5 +46,5 @@
 <!-- End Main -->
 
 <!-- Footer -->
-<app-footer (elementCreated)="onElementCreated($event)"></app-footer>
+<app-footer></app-footer>
 <!-- End Footer -->

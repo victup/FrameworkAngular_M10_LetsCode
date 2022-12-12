@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FeaturesSectionData } from 'src/app/models/features-section-data.model';
 
 @Component({
@@ -7,15 +7,11 @@ import { FeaturesSectionData } from 'src/app/models/features-section-data.model'
   styleUrls: ['./features.component.css']
 })
 export class FeaturesComponent implements OnInit {
-  @Input() public dataFeatures!: FeaturesSectionData;
-  @Output() public elementCreated: EventEmitter<string> = new EventEmitter<string>();
+  @Input() public featuresData!: FeaturesSectionData;
 
   constructor() { }
 
-  ngOnInit(): void {
-    this.elementCreated.emit('Featuares');
-
+  ngOnInit() {
   }
-
 
 }
